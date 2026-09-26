@@ -8,21 +8,25 @@ import gameEngine.GameEngine;
 public class Spaceship extends GamePiece implements Moveable {
     private int direction = 1;
 
-    public Ship(int location) {
+    public Spaceship(int location) {
+
         super('S', "Ship", location);
     }
 
     @Override 
     public void move(Drawable[] gameBoard, int playerLocation) {
+        //removing spaceship from current local
         gameBoard[getLocation()] = null;
 
         int newLocation = getLocation() + direction;
+        
         if (newLocation >= GameEngine.BOARD_SIZE || newLocation < 0) {
             direction *= -1;
             newLocation = getLocation() + direction;
         }
 
         setLocation(newLocation);
+        
         gameBoard[getLocation()] = this;
     }
 

@@ -1,3 +1,9 @@
+commit b44ddf276f2532b08193c49f1789c165ca4ce37f
+Author: parker-lol <parkerplays404@gmail.com>
+Date:   Fri Sep 25 20:42:59 2026 -0600
+
+    added gitlog.txt, cleaned up filing layout
+
 commit 01c52cf0c2100a762e36a551967f73b6696398d3
 Author: parker-lol <parkerplays404@gmail.com>
 Date:   Fri Sep 25 19:42:59 2026 -0600

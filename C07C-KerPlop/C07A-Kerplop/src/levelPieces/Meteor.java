@@ -10,7 +10,6 @@ public class Meteor implements Drawable {
     }
 
     @Override 
-
     public void draw() {
         System.out.print(symbol);
     }

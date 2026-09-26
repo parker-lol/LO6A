@@ -18,17 +18,45 @@ public class LevelSetup {
         playerStartLoc = 10;
 
         if (levelNum == 1) {
+            // Drawable only
             Meteor meteor = new Meteor();
             gameBoard[2] = meteor;
 
+            // Moveable & Interacting
             Spaceship ship = new Spaceship(5);
             gameBoard[5] = ship;
             movingPieces.add(ship);
             interactingPieces.add(ship);
 
-            BlackHole blackHole = new BlackHole(15);
-            gameBoard[15] = blackHole;
-            interactingPieces.add(blackHole);
+            // Interacting (Static obstacle)
+            SpaceStation station = new SpaceStation(15);
+            gameBoard[15] = station;
+            interactingPieces.add(station);
+
+            // Interacting (Need 2 points to advance)
+            Star star1 = new Star(8);
+            gameBoard[8] = star1;
+            interactingPieces.add(star1);
+
+            Star star2 = new Star(12);
+            gameBoard[12] = star2;
+            interactingPieces.add(star2);
+        } else if (levelNum == 2) {
+            // Moveable & Interacting
+            Alien alien = new Alien(4);
+            gameBoard[4] = alien;
+            movingPieces.add(alien);
+            interactingPieces.add(alien);
+
+            // Interacting (kill condition)
+            BlackHole hole = new BlackHole(14);
+            gameBoard[14] = hole;
+            interactingPieces.add(hole);
+
+            // Interacting (instant win condition)
+            Wormhole wormhole = new Wormhole(19);
+            gameBoard[19] = wormhole;
+            interactingPieces.add(wormhole);
         }
     }
 

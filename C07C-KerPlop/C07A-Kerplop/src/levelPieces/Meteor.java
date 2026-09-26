@@ -10,7 +10,6 @@ public class Meteor {
     }
     
     @Override 
-
     public void draw() {
         System.out.print(symbol);
     }

@@ -13,6 +13,6 @@ public class BlackHole extends GamePiece {
         if (Math.abs(getLocation() - playerLocation) <= 1) {
             return InteractionResult.KILL;
         }
-        return interactionResult.NONE;
+        return InteractionResult.NONE;
     }
 }

@@ -6,8 +6,8 @@ import java.util.Scanner;
  * The actual game player Keeps track of player status (location, hit points,
  * etc.) Manages player movement.
  * 
- * @author Mark Baldwin
- * @author Cyndi Rader
+ * @author Parker Lollini
+ * @author Eknara Dassanayake
  *
  */
 public class Player implements Drawable {
@@ -15,11 +15,10 @@ public class Player implements Drawable {
 	/**
 	 * The number of hits that can be taken before death.
 	 */
-	public static final int POINTS_TO_DIE = 2;
+	public static final int POINTS_TILL_DIE = 2;
 
 	/**
-	 * The number of points to complete a level. Player can earn 1 point at a time
-	 * by interacting with a game piece.
+	 * The number of points to complete a level. Player can earn 1 point at a time by interacting with a game piece.
 	 */
 	public final static int POINTS_TO_ADVANCE = 2;
 
@@ -27,13 +26,17 @@ public class Player implements Drawable {
 	private int location;
 	private int levelPoints;
 	private int damagePoints;
+
 	private char symbol = 'P' ;
 
 	public enum PlayerStatus {
-		DEAD, ADVANCING, OK;
+		DEAD, 
+		ADVANCING, 
+		OK;
 	}
 
 	private PlayerStatus playerStatus;
+
 
 	// This is one way to solve the scanner resource warning problem
 	// Make the scanner an instance variable
@@ -64,23 +67,22 @@ public class Player implements Drawable {
 
 	/**
 	 * Test to see if player can advance to next level
-	 * 
 	 * @return true if can advance
 	 */
 	public boolean canAdvance() {
 		if (levelPoints >= POINTS_TO_ADVANCE || playerStatus == PlayerStatus.ADVANCING) {
 			return true;
+		} else {
+			return false; 
 		}
-		return false;
 	}
 
 	/**
 	 * Test to see if player is dead
-	 * 
 	 * @return true if dead
 	 */
 	public boolean isDead() {
-		return (playerStatus == PlayerStatus.DEAD || damagePoints >= POINTS_TO_DIE);
+		return (playerStatus == PlayerStatus.DEAD || damagePoints >= POINTS_TILL_DIE);
 	}
 
 	/**
@@ -136,7 +138,6 @@ public class Player implements Drawable {
 	/**
 	 * Accepts and returns the player's movement choice. Ensures the value is
 	 * between 1 and 4.
-	 * 
 	 * @return user's validated selection
 	 */
 	private int getPlayerChoice() {
@@ -173,8 +174,7 @@ public class Player implements Drawable {
 	 * the desired direction, "jump" goes two. If move would go beyond ends of
 	 * board, an error message is displayed.
 	 * 
-	 * @param option a numeric option representing the direction selected by the
-	 *               user
+	 * @param option a numeric option representing the direction selected by the user
 	 * @return true if the option is valid (within bounds), false otherwise
 	 */
 	private boolean updatePlayerLocation(int option) {
@@ -203,7 +203,6 @@ public class Player implements Drawable {
 
 	/**
 	 * Getter for player location
-	 * 
 	 * @return player location
 	 */
 	public int getLocation() {
@@ -211,9 +210,7 @@ public class Player implements Drawable {
 	}
 
 	/**
-	 * **** Interface methods ***
-	 * 
-	 * 
+	 * Interface methods
 	 * Draws the player
 	 */
 	@Override

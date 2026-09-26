@@ -196,7 +196,7 @@ public class GameEngine {
 			}
 			if (result == InteractionResult.KILL) {
 				player.killed();
-				System.out.println("\nKerPolp! Something just killed you!\n");
+				System.out.println("\nKerPlop! Something just killed you!\n");
 				// can only be killed once
 				break;
 			}

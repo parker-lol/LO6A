@@ -1,3 +1,5 @@
+// Parker Lollini and Eknara Dassanayake | 9/25/2026
+
 package levelPieces;
 
 import gameEngine.Drawable;
@@ -15,14 +17,14 @@ public class LevelSetup {
         gameBoard = new Drawable[GameEngine.BOARD_SIZE];
         movingPieces = new ArrayList<>();
         interactingPieces = new ArrayList<>();
-        playerStartLoc = 10;
+        playerStartLoc = 10; // start the player for level 1 on position 10
 
         if (levelNum == 1) {
             // Drawable only
             Meteor meteor = new Meteor();
             gameBoard[2] = meteor;
 
-            // Moveable & Interacting
+            // moveable and interacting
             Spaceship ship = new Spaceship(5);
             gameBoard[5] = ship;
             movingPieces.add(ship);
@@ -33,7 +35,7 @@ public class LevelSetup {
             gameBoard[15] = station;
             interactingPieces.add(station);
 
-            // Interacting (Need 2 points to advance)
+            // Interacting (Need 2 points to advance, collect both stars)
             Star star1 = new Star(8);
             gameBoard[8] = star1;
             interactingPieces.add(star1);

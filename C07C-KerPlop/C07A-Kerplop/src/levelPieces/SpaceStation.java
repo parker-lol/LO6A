@@ -5,7 +5,7 @@ import gameEngine.InteractionResult;
 
 public class SpaceStation extends GamePiece {
     public SpaceStation(int location) {
-        super('[', "Space Station", location);
+        super('{', "Space Station", location);
     }
 
     @Override

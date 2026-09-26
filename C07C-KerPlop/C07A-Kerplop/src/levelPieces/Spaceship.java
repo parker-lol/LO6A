@@ -8,7 +8,7 @@ import gameEngine.GameEngine;
 public class Spaceship extends GamePiece implements Moveable {
     private int direction = 1;
 
-    public Ship(int location) {
+    public Spaceship(int location) {
         super('S', "Ship", location);
     }
 

@@ -1,0 +1,29 @@
+LO6A - KerPlop Game
+Parker Lollini and Eknara Dassanayake
+
+Total unique pieces: 7 (Alien, BlackHole, Meteor, Spaceship, SpaceStation, Star, Wormhole)
+Drawable only  
+    Meteor implements only the Drawable interface. It acts as a static background object and does not interact with
+    the player in any way.
+Moveable game pieces
+    Spaceship uses a linear movement system to travel in one direction and turn around once it reaches the end of the board.
+    Alien satisfies the random motion requirement by using java.util.Random to decide whether to move left or right on each turn.
+Static interacting pieces
+    BlackHole, Star, Wormhole, and SpaceStation extend GamePiece but do not move. Their interactions are described in more detail below.
+
+Interaction Results Coverage
+Each required interactionResult enum is utilized across the 7 game pieces:
+    HIT: Alien (same square)
+    KILL: BlackHole (distance)
+    ADVANCE: Wormhole (same square)
+    GET_POINT: Star (same square)
+    NONE: Spaceship and SpaceStation
+
+Interaction at a distance
+    BlackHole calculates the absolute value of the distance between itself and the player, and triggers KILL if the player is within
+    one space of it (landing on or adjacent to it). 
+    The three static interacting pieces (Star, WormHole, SpaceStation) require the player to be on their exact location to 
+    proccess an interaction.
+
+Levels
+    The LevelSetup class configures and populates two distinct levels, which are outlined in the CreateLevel function from lines 22 to 63.

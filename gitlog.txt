@@ -1,3 +1,9 @@
+commit 9e9c90375cde01a384bdca65b8810615da83ffa9
+Author: parker-lol <parkerplays404@gmail.com>
+Date:   Fri Sep 25 21:48:04 2026 -0600
+
+    Added final GamePieces.txt, GameUML.png, and gitlog.txt files
+
 commit d9960d3bad5ebad9901056e2bd5d406c22842c44
 Author: parker-lol <parkerplays404@gmail.com>
 Date:   Fri Sep 25 20:52:18 2026 -0600
